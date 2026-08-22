@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<title>Wedding Events</title>
+
+</head>
+
+<body class="events-page">
+
+  <header class="page-header">
+
+    <div><p class="small-heading">शुभ विवाह समारोह</p><h1>मंगल कार्यक्रम</h1></div>
+
+    <a class="exit-button" href="index.html">Exit</a>
+
+  </header>
+
+ 
+
+  <main class="page-container">
+
+    <section class="events-grid" aria-label="Wedding events">
+
+      <article class="event-card">
+
+        <div class="event-number">1</div>
+
+        <h2>तिलक, लग्न-मटकोर एवं गीत-संगीत</h2>
+
+        <p>कार्यक्रम की तिथि, समय और स्थान देखें।</p>
+
+        <a class="primary-button" href="tilak.html">कार्यक्रम देखें</a>
+
+      </article>
+
+ 
+
+      <article class="event-card">
+
+        <div class="event-number">2</div>
+
+        <h2>हल्दी-कलश, मंडप एवं घृतधारी</h2>
+
+        <p>कार्यक्रम की तिथि, समय और स्थान देखें।</p>
+
+        <a class="primary-button" href="haldi.html">कार्यक्रम देखें</a>
+
+      </article>
+
+ 
+
+      <article class="event-card">
+
+        <div class="event-number">3</div>
+
+        <h2>बारात एवं शुभ विवाह</h2>
+
+        <p>कार्यक्रम की तिथि, समय और स्थान देखें।</p>
+
+        <a class="primary-button" href="baraat.html">कार्यक्रम देखें</a>
+
+      </article>
+
+    </section>
+
+ 
+
+    <section class="rsvp-section">
+
+      <h2>Will you be joining us?</h2>
+
+      <p>Please share your attendance details with us.</p>
+
+      <button type="button" class="secondary-button" id="openRsvpButton">Fill RSVP Details</button>
+
+    </section>
+
+  </main>
+
+ 
+
+  <div class="modal-overlay" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+
+    <div class="modal-box">
+
+      <button type="button" class="modal-close-button" id="closeRsvpButton" aria-label="Close RSVP form">&times;</button>
+
+      <h2 id="rsvpTitle">RSVP</h2>
+
+      <p>Please let us know whether you will attend.</p>
+
+ 
+
+      <!-- Replace YOUR_FORM_ID with the ID provided by Formspree. -->
+
+      <form id="rsvpForm" action=https://formspree.io/f/YOUR_FORM_ID method="POST">
+
+        <div class="form-group">
+
+          <label for="guestName">Guest Name</label>
+
+          <input type="text" id="guestName" name="Guest Name" placeholder="Enter your full name" required>
+
+        </div>
+
+ 
+
+        <div class="form-group">
+
+          <label for="phoneNumber">Phone Number</label>
+
+          <input type="tel" id="phoneNumber" name="Phone Number" placeholder="Enter 10-digit phone number" pattern="[0-9]{10}" maxlength="10" inputmode="numeric" required>
+
+        </div>
+
+ 
+
+        <fieldset class="form-group attendance-fieldset">
+
+          <legend>Will you attend the wedding?</legend>
+
+          <div class="radio-options">
+
+            <label class="radio-label"><input type="radio" name="Attending" value="Yes" required> Yes</label>
+
+            <label class="radio-label"><input type="radio" name="Attending" value="No"> No</label>
+
+          </div>
+
+        </fieldset>
+
+ 
+
+        <button type="submit" class="primary-button submit-button" id="submitRsvpButton">Final Submit</button>
+
+      </form>
+
+ 
+
+      <div id="responseMessage" class="response-message" aria-live="polite"></div>
+
+    </div>
+
+  </div>
+
+ 
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
+
+ 

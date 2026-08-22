@@ -1,0 +1,210 @@
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+
+  margin: 0; min-height: 100vh; position: relative; overflow-x: hidden;
+
+  font-family: Arial, Helvetica, sans-serif; color: #58352f; background: #fffaf2;
+
+}
+
+body::before {
+
+  content: ""; position: fixed; inset: 0; background-image: var(--watermark-image);
+
+  background-repeat: no-repeat; background-position: center; background-size: cover;
+
+  opacity: 0.25; z-index: -2;
+
+}
+
+body::after {
+
+  content: ""; position: fixed; inset: 0; background: rgba(255, 250, 242, 0.08); z-index: -1;
+
+}
+
+.cover-page { --watermark-image: url("images/cover-watermark.jpg"); }
+
+.events-page { --watermark-image: url("images/events-watermark.jpg"); }
+
+.tilak-page { --watermark-image: url("images/tilak-watermark.jpg"); }
+
+.haldi-page { --watermark-image: url("images/haldi-watermark.jpg"); }
+
+.baraat-page { --watermark-image: url("images/baraat-watermark.jpg"); }
+
+.page-container { width: min(1100px, 92%); margin: 0 auto; padding: 50px 0; }
+
+.cover-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+.cover-card, .event-detail-card {
+
+  border: 1px solid rgba(255,255,255,.30); border-radius: 30px;
+
+  background: rgba(255,255,255,.12); 
+
+  -webkit-backdrop-filter: blur(15px);
+ 
+  box-shadow: 0 8px 32px rgba(0,0,0,.15);
+
+}
+
+.cover-card { width: min(750px,100%); padding: 55px 35px; text-align: center; }
+
+.ganpati-icon {
+
+  width: 70px; height: 70px; margin: 0 auto 20px; display: grid; place-items: center;
+
+  border: 1px solid #b77979; border-radius: 50%; color: #a95d62; font-size: 32px;
+
+}
+
+.small-heading { margin-bottom: 12px; color: #7d493e; font-size: 15px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+
+.couple-name { margin: 15px 0; font: 400 clamp(28px,5vw,54px)/1.15 Georgia,serif; }
+
+.couple-name span { color: #a95d62; }
+
+.welcome-message { max-width: 620px; margin: 25px auto; font-size: 18px; line-height: 1.8; }
+
+.wedding-date { margin: 30px 0; font-size: 21px; font-weight: 700; }
+
+.page-header { width: min(1100px,92%); margin: 0 auto; padding-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+.page-header h1 { margin: 5px 0; font: 400 40px Georgia,serif; }
+
+.primary-button, .secondary-button, .exit-button, .back-button {
+
+  display: inline-block; border-radius: 30px; cursor: pointer; font-size: 16px; font-weight: 700;
+
+  text-align: center; text-decoration: none; transition: .2s ease;
+
+}
+
+.primary-button { padding: 14px 28px; color: #fff; border: 0; background: #7d493e; box-shadow: 0 7px 18px rgba(125,73,62,.2); }
+
+.primary-button:hover { background: #61362e; transform: translateY(-2px); }
+
+.secondary-button { padding: 12px 26px; color: #7d493e; border: 2px solid #7d493e; background: transparent; }
+
+.secondary-button:hover { color: #fff; background: #7d493e; }
+
+.exit-button, .back-button { padding: 10px 20px; color: #58352f; border: 1px solid #a77c70; background: rgba(255,255,255,.78); }
+
+.exit-button:hover, .back-button:hover { color: #fff; background: #7d493e; }
+
+.events-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+.event-card {
+
+  background: rgba(255,255,255,0.12);
+ 
+  backdrop-filter: blur(0.5px);
+
+  -webkit-backdrop-filter: blur(0.5px);
+
+  border: 1px solid rgba(255,255,255,0.3);  
+
+}
+
+.event-card h2 { font: 400 27px/1.6 Georgia,serif; }
+
+.event-card p { line-height: 1.7; }
+
+.event-card .primary-button { margin-top: auto; }
+
+.event-number { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; color: #7d493e; background: #f2ddd0; font-size: 22px; font-weight: 700; }
+
+.rsvp-section { margin-top: 45px; padding: 35px; text-align: center; border-radius: 25px; background: rgba(255,255,255,.74); }
+
+.rsvp-section h2 { margin-top: 0; font: 400 32px Georgia,serif; }
+
+.event-detail-container { min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; }
+
+.event-detail-card { width: min(800px,100%); padding: 45px; }
+
+.event-detail-card > h1 { font: 400 clamp(34px,5vw,50px)/1.4 Georgia,serif; }
+
+.detail-grid { margin-top: 35px; display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+
+.detail-box { padding: 20px; border-radius: 18px; background: rgba(255,255,255,0.3); 
+              backdrop-filter: blur(0.5px); border: 1px solid rgba(255,255,255,0.25); }
+
+.detail-box h3 { margin: 0 0 8px; }
+
+.detail-box p { margin-bottom: 0; line-height: 1.5; }
+
+.full-width { grid-column: 1/-1; }
+
+.map-section { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; align-items: center; }
+
+.qr-container { text-align: center; }
+
+.qr-code { width: 160px; height: 160px; padding: 8px; object-fit: contain; border: 1px solid #dbc2b5; border-radius: 14px; background: #fff; }
+
+.modal-overlay { position: fixed; inset: 0; z-index: 1000; padding: 20px; display: none; align-items: center; justify-content: center; background: rgba(35,20,18,.6); }
+
+.modal-overlay.show { display: flex; }
+
+.modal-box { width: min(500px,100%); max-height: 90vh; padding: 35px; position: relative; overflow-y: auto; border-radius: 25px; background: #fffaf2; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+
+.modal-box h2 { margin-top: 0; font: 400 38px Georgia,serif; }
+
+.modal-close-button { position: absolute; top: 15px; right: 18px; border: 0; cursor: pointer; color: #7d493e; background: transparent; font-size: 32px; }
+
+.form-group { margin: 0 0 22px; padding: 0; border: 0; }
+
+.form-group label, .attendance-fieldset legend { display: block; margin-bottom: 8px; font-weight: 700; }
+
+.form-group input[type="text"], .form-group input[type="tel"] { width: 100%; padding: 13px 15px; border: 1px solid #c9aba1; border-radius: 12px; outline: none; font-size: 16px; background: #fff; }
+
+.form-group input:focus { border-color: #7d493e; box-shadow: 0 0 0 3px rgba(125,73,62,.12); }
+
+.radio-options { display: flex; gap: 20px; }
+
+.radio-label { padding: 12px 20px; display: flex !important; align-items: center; gap: 8px; border: 1px solid #c9aba1; border-radius: 12px; cursor: pointer; background: #fff; }
+
+.submit-button { width: 100%; }
+
+.response-message { display: none; margin-top: 20px; padding: 22px; border-radius: 16px; text-align: center; font-size: 18px; line-height: 1.6; }
+
+.response-message.show { display: block; }
+
+.response-success { color: #275c39; background: #e9f7ed; }
+
+.response-decline { color: #7a3d3d; background: #fbecec; }
+
+.response-error { color: #8a3c24; background: #fff0e9; }
+
+@media (max-width: 800px) {
+
+  .events-grid, .detail-grid, .map-section { grid-template-columns: 1fr; }
+
+  .event-card { min-height: 300px; }
+
+  .full-width { grid-column: auto; }
+
+  .page-header h1 { font-size: 30px; }
+
+}
+
+@media (max-width: 520px) {
+
+  .page-header { align-items: flex-start; }
+
+  .cover-card, .event-detail-card { padding: 30px 20px; }
+
+  .couple-name { font-size: 42px; }
+
+  .welcome-message { font-size: 16px; }
+
+  .radio-options { flex-direction: column; }
+
+  .radio-label { width: 100%; }
+
+  .modal-box { padding: 30px 20px; }
+
+}
